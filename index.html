@@ -268,7 +268,7 @@
     <!-- Hero -->
     <section class="hero">
       <h1><span>Logan</span></h1>
-      <p>Parse and analyze IIS and S3 access logs with SQL. Fast, cross-platform, Parquet-powered.</p>
+      <p>Parse and analyze IIS, Apache, and S3 access logs with SQL. Fast, cross-platform, Parquet-powered.</p>
       <div class="hero-install" onclick="navigator.clipboard.writeText(this.textContent.trim())">
         curl -fsSL https://wagneripjr.github.io/logan-pub/install.sh | sh
       </div>
@@ -280,7 +280,7 @@
       <div class="feature-grid">
         <div class="feature-card">
           <h3>Format Auto-Detection</h3>
-          <p>Automatically identifies IIS W3C Extended and AWS S3 Server Access Log formats. Just point it at a file.</p>
+          <p>Automatically identifies IIS W3C Extended, Apache Combined, and AWS S3 Server Access Log formats. Just point it at a file.</p>
         </div>
         <div class="feature-card">
           <h3>SQL Queries</h3>
@@ -314,6 +314,9 @@
 
 <span class="comment"># Top 20 endpoints from a directory (recursive)</span>
 <span class="cmd">logan -s /var/log/iis/ -r top 20</span>
+
+<span class="comment"># Analyze Apache/HTTPD access logs</span>
+<span class="cmd">logan -s /var/log/apache2/access_log top 20</span>
 
 <span class="comment"># Analyze S3 access logs directly from a bucket</span>
 <span class="cmd">logan -s "s3://my-bucket/logs/" top 10</span>
